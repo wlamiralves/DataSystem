@@ -6,12 +6,12 @@ class App:
     def __init__(self, master):
         self.master = master
         master.title("Sistema de Gerenciamento de Produtos")
-        master.configure(bg="#2C3E50")  # Cor de fundo
+        master.configure(bg="#2C3E50")  
 
         self.label = tk.Label(master, text="Sistema de Produtos", font=("Helvetica", 18), bg="#2C3E50", fg="#ECF0F1")
         self.label.pack(pady=10)
 
-        # Frame para adicionar produtos
+        
         self.frame_adicionar = tk.Frame(master, bg="#34495E")
         self.frame_adicionar.pack(pady=10)
 
@@ -28,7 +28,7 @@ class App:
         self.adicionar_button = tk.Button(self.frame_adicionar, text="Adicionar Produto", command=self.adicionar_produto, bg="#27AE60", fg="#FFFFFF")
         self.adicionar_button.grid(row=2, columnspan=2)
 
-        # Frame para buscar produtos
+        
         self.frame_buscar = tk.Frame(master, bg="#34495E")
         self.frame_buscar.pack(pady=10)
 
@@ -40,7 +40,7 @@ class App:
         self.buscar_button = tk.Button(self.frame_buscar, text="Buscar", command=self.buscar_produto, bg="#2980B9", fg="#FFFFFF")
         self.buscar_button.grid(row=0, column=2)
 
-        # Frame para remover produtos
+        
         self.frame_remover = tk.Frame(master, bg="#34495E")
         self.frame_remover.pack(pady=10)
 
@@ -52,7 +52,7 @@ class App:
         self.remover_button = tk.Button(self.frame_remover, text="Remover Produto", command=self.remover_produto, bg="#C0392B", fg="#FFFFFF")
         self.remover_button.grid(row=0, column=2)
 
-        # Frame para alterar produtos
+       
         self.frame_alterar = tk.Frame(master, bg="#34495E")
         self.frame_alterar.pack(pady=10)
 
@@ -74,11 +74,11 @@ class App:
         self.alterar_button = tk.Button(self.frame_alterar, text="Alterar Produto", command=self.alterar_produto, bg="#F39C12", fg="#FFFFFF")
         self.alterar_button.grid(row=3, columnspan=2)
 
-        # Botão para listar todos os produtos
+        
         self.listar_button = tk.Button(master, text="Listar Todos os Produtos", command=self.listar_produtos, bg="#8E44AD", fg="#FFFFFF")
         self.listar_button.pack(pady=10)
 
-        # Área de texto para resultados
+        
         self.resultado_text = tk.Text(master, height=20, width=70, bg="#ECF0F1", fg="#2C3E50", font=("Helvetica", 12))
         self.resultado_text.pack(pady=10)
 
@@ -124,7 +124,7 @@ class App:
             remover_produto(int(produto_id))
             messagebox.showinfo("Sucesso", "Produto removido.")
             self.remover_entry.delete(0, tk.END)
-            self.listar_produtos()  # Atualiza a lista de produtos
+            self.listar_produtos()  
         else:
             messagebox.showerror("Erro", "Insira um ID válido.")
 
@@ -139,7 +139,7 @@ class App:
             self.alterar_entry.delete(0, tk.END)
             self.novo_nome_entry.delete(0, tk.END)
             self.nova_quantidade_entry.delete(0, tk.END)
-            self.listar_produtos()  # Atualiza a lista de produtos
+            self.listar_produtos()  
         else:
             messagebox.showerror("Erro", "Insira dados válidos.")
 
